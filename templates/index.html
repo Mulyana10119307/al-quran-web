@@ -44,9 +44,9 @@
       </nav>
       <section
         class="grid xl:grid-cols-3 gap-2 max-sm:grid-cols-1 sm:grid-cols-1 md:grid-cols-2">
-        {% for data in datas %}
+        {% for data in data %}
         <a
-          href="{{data['nomor']}}"
+          href="{{ url_for('get_surat_ayat', surat_number=data['nomor'], nama_surat=data['nama']) }}"
           class="group flex w-80 p-4 gap-2 border-2 items-center border-slate-200 rounded-lg hover:bg-emerald-800">
           <div
             class="bg-emerald-200 h-auto w-12 text-center p-2 rounded-sm group-hover:bg-emerald-50">

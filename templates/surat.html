@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/output.css') }}" />
+    <title>Surat Ayat</title>
+  </head>
+  <body class="bg-emerald-50 h-screen text-emerald-800">
+    <main class="flex flex-col justify-center px-16 py-8 gap-8">
+      <header>
+        <h1 class="text-5xl text-center">Surat {{ nama_surat }}</h1>
+      </header>
+      <section class="grid gap-2">
+        {% for ayat in surat_ayat %}
+        <div class="flex flex-col items-end p-4 rounded-lg gap-2 hover:shadow-md ">
+          <div class="flex flex-row-reverse gap-2 items-center">
+            <p class="bg-emerald-400 p-4">{{ ayat["nomor"] }}</p>
+            <p>{{ ayat["ar"] }}</p>
+          </div>
+          <p class="text-start">{{ ayat["id"] }}</p>
+        </div>
+        {% endfor %}
+      </section>
+      <footer class="text-center">
+        <p>&copy; Mulyana</p>
+      </footer>
+    </main>
+  </body>
+</html>
